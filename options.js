@@ -1,21 +1,48 @@
 const commands = {
   react: {
-    command: "npx create-react-app name",
+    command: "npx create-react-app ${pathToDir}",
     alias: ["react", "cra", "create-react-app"],
+    options: [],
   },
   "react-native": {
-    command: "npx react-native init AwesomeProject",
+    command: "npx react-native init ${pathToDir}",
     alias: ["react-native", "rn"],
+    options: ["boof"],
+  },
+  next: {
+    command: "npx create-next-app ${pathToDir}",
+    alias: ["next", "cna", "create-next-app"],
+    options: [],
+  },
+  "next-ts": {
+    command: "npx create-next-app ${pathToDir} --typescript",
+    alias: ["next", "cna", "create-next-app"],
+    options: ["ts"],
   },
 };
 
 export const findCommand = (dirName, args) => {
   for (const [key, value] of Object.entries(commands)) {
-    for (const arg of value.alias) {
-      if (arg === args[1]) {
-        console.log(arg, arg[1]);
-        return value.command;
+    for (const appName of value.alias) {
+      if (appName === args[0]) {
+        var optionCheck = true;
+        for (const option of value.options) {
+          if (!args.includes(option)) {
+            optionCheck = false;
+            break;
+          }
+        }
+        for (const arg of args.slice(1)) {
+          if (!value.options.includes(arg)) {
+            optionCheck = false;
+            break;
+          }
+        }
+        if (optionCheck) {
+          return value.command.replace("${pathToDir}", dirName);
+        }
       }
     }
   }
+  return 'echo "command not found"';
 };
