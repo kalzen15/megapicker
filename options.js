@@ -7,7 +7,12 @@ const commands = {
   "react-native": {
     command: "npx react-native init ${pathToDir}",
     alias: ["react-native", "rn"],
-    options: ["boof"],
+    options: [],
+  },
+  "react-native-expo": {
+    command: "npx -p expo-cli@latest expo init ${pathToDir}",
+    alias: ["react-native", "rn"],
+    options: ["expo"],
   },
   next: {
     command: "npx create-next-app ${pathToDir}",
