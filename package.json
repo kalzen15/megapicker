@@ -4,6 +4,10 @@
   "description": "A CLI to help you create different projects without looking up the doc command to find the installation commands",
   "main": "index.js",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kalzen15/megapicker"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,9 +16,14 @@
     "mpk": "./index.js"
   },
   "keywords": [
-    "cli"
+    "cli",
+    "project-picker"
   ],
-  "author": "",
+  "author": {
+    "name": "Calvin D'Souza",
+    "email": "calvindsouza155@gmail.com",
+    "url": "https://github.com/kalzen15"
+  },
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.1",
