@@ -1,5 +1,5 @@
 <p align="center">
-<img height="150" width="150" src ="https://cdn.discordapp.com/attachments/856193244421029890/867773370215956490/megapicker_logo.png"
+<img height="150" width="150" src ="https://cdn.discordapp.com/attachments/856193244421029890/867784029825794108/megapicker_logo.png"
 /><br/><br/>
 <b>MegaPicker</b><br/>
 It is a CLI which helps you create projects with different stacks using a universal command.
