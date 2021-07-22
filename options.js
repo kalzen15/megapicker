@@ -1,28 +1,38 @@
+import chalk from "chalk";
 const commands = {
   react: {
     command: "npx create-react-app ${pathToDir}",
     alias: ["react", "cra", "create-react-app"],
     options: [],
+    userOutput: `Creating your ${chalk.blue("React")} project`,
   },
   "react-native": {
     command: "npx react-native init ${pathToDir}",
     alias: ["react-native", "rn"],
     options: [],
+    userOutput: `Creating your ${chalk.blue("React Native")} project`,
   },
   "react-native-expo": {
     command: "npx -p expo-cli@latest expo init ${pathToDir}",
     alias: ["react-native", "rn"],
     options: ["expo"],
+    userOutput: `Creating your ${chalk.blue(
+      "React Native"
+    )} project with ${chalk.blackBright("Expo")}`,
   },
   next: {
     command: "npx create-next-app ${pathToDir}",
     alias: ["next", "cna", "create-next-app"],
     options: [],
+    userOutput: `Creating your ${chalk.green("Next")} project`,
   },
   "next-ts": {
     command: "npx create-next-app ${pathToDir} --typescript",
     alias: ["next", "cna", "create-next-app"],
     options: ["ts"],
+    userOutput: `Creating your ${chalk.green(
+      "Next"
+    )} project with ${chalk.blueBright("Typescript")}`,
   },
 };
 
@@ -44,10 +54,16 @@ export const findCommand = (dirName, args) => {
           }
         }
         if (optionCheck) {
-          return value.command.replace("${pathToDir}", dirName);
+          return {
+            userOutput: value.userOutput,
+            command: value.command.replace("${pathToDir}", dirName),
+          };
         }
       }
     }
   }
-  return 'echo "command not found"';
+  return {
+    userOutput: `${chalk.black.bgYellow("Could not find a suitable command")}`,
+    command: 'echo "Please try another command !\n"',
+  };
 };

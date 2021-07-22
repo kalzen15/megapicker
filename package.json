@@ -1,18 +1,23 @@
 {
-  "name": "custom-app",
+  "name": "megapicker",
   "version": "1.0.0",
-  "description": "",
+  "description": "A CLI to help you create different projects without looking up the doc command to find the installation commands",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "ca": "./index.js"
+    "megapicker": "./index.js",
+    "mpk": "./index.js"
   },
   "keywords": [
     "cli"
   ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "prompts": "^2.4.1"
+  }
 }
