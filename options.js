@@ -34,6 +34,24 @@ const commands = {
       "Next"
     )} project with ${chalk.blueBright("Typescript")}`,
   },
+  nest: {
+    command: "npx -p @nestjs/cli@latest nest new ${pathToDir}",
+    alias: ["nest"],
+    options: [],
+    userOutput: `Creating your ${chalk.magenta("Nest")} project`,
+  },
+  angular: {
+    command: "npx -p @angular/cli@latest ng new ${pathToDir}",
+    alias: ["angular", "ng"],
+    options: [],
+    userOutput: `Creating your ${chalk.red("Angular")} project`,
+  },
+  express: {
+    command: "npx express-generator-typescript ${pathToDir}",
+    alias: ["express", "expressjs", "express-generator-typescript"],
+    options: [],
+    userOutput: `Creating your ${chalk.blue("Express")} project`,
+  },
 };
 
 export const findCommand = (dirName, args) => {
