@@ -6,6 +6,24 @@ const commands = {
     options: [],
     userOutput: `Creating your ${chalk.blue("React")} project`,
   },
+  "react-vite": {
+    command: "npm init vite@latest ${pathToDir} -- --template react",
+    alias: ["react", "cra", "create-react-app"],
+    options: ["vite"],
+    userOutput: `Creating your ${chalk.blue(
+      "React"
+    )} project with ${chalk.yellow("Vite")}`,
+  },
+  "react-vite-ts": {
+    command: "npm init vite@latest ${pathToDir} -- --template react-ts",
+    alias: ["react", "cra", "create-react-app"],
+    options: ["vite", "ts"],
+    userOutput: `Creating your ${chalk.blue(
+      "React"
+    )} project with ${chalk.yellow("Vite")} and ${chalk.blueBright(
+      "Typescript"
+    )}`,
+  },
   "react-native": {
     command: "npx react-native init ${pathToDir}",
     alias: ["react-native", "rn"],
@@ -58,11 +76,107 @@ const commands = {
     options: [],
     userOutput: `Creating your ${chalk.green("Vue")} project`,
   },
+  "vue-vite": {
+    command: "npm init vite@latest ${pathToDir} -- --template vue",
+    alias: ["vue", "vuejs", "vuecli"],
+    options: ["vite"],
+    userOutput: `Creating your ${chalk.green(
+      "Vue"
+    )} project with ${chalk.yellow("Vite")}`,
+  },
+  "vue-vite-ts": {
+    command: "npm init vite@latest ${pathToDir} -- --template vue-ts",
+    alias: ["vue", "vuejs", "vuecli"],
+    options: ["vite", "ts"],
+    userOutput: `Creating your ${chalk.green(
+      "Vue"
+    )} project with ${chalk.yellow("Vite")} and ${chalk.blueBright(
+      "Typescript"
+    )}`,
+  },
   preact: {
     command: "npx preact-cli create default ${pathToDir}",
     alias: ["preact", "preactjs"],
     options: [],
     userOutput: `Creating your ${chalk.magenta("Preact")} project`,
+  },
+  "preact-vite": {
+    command: "npm init vite@latest ${pathToDir} -- --template preact",
+    alias: ["preact", "preactjs"],
+    options: ["vite"],
+    userOutput: `Creating your ${chalk.magenta(
+      "Preact"
+    )} project with ${chalk.yellow("Vite")}`,
+  },
+  "preact-vite-ts": {
+    command: "npm init vite@latest ${pathToDir} -- --template preact-ts",
+    alias: ["preact", "preactjs"],
+    options: ["vite", "ts"],
+    userOutput: `Creating your ${chalk.magenta(
+      "Preact"
+    )} project with ${chalk.yellow("Vite")} and ${chalk.blueBright(
+      "Typescript"
+    )}`,
+  },
+  gatsby: {
+    command: "npx -p gatsby-cli@latest gatsby new ${pathToDir}",
+    alias: ["gatsby", "gatsbyjs"],
+    options: [],
+    userOutput: `Creating your ${chalk.magenta("Gatsby")} project`,
+  },
+  "vanilla-vite": {
+    command: "npm init vite@latest ${pathToDir} -- --template vanilla",
+    alias: ["vanilla"],
+    options: ["vite"],
+    userOutput: `Creating your ${chalk.yellow(
+      "Vanilla"
+    )} project with ${chalk.yellow("Vite")}`,
+  },
+  "vanilla-vite-ts": {
+    command: "npm init vite@latest ${pathToDir} -- --template vanilla-ts",
+    alias: ["vanilla"],
+    options: ["vite", "ts"],
+    userOutput: `Creating your ${chalk.yellow(
+      "Vanilla"
+    )} project with ${chalk.yellow("Vite")} and ${chalk.blueBright(
+      "Typescript"
+    )}`,
+  },
+  "svelte-vite": {
+    command: "npm init vite@latest ${pathToDir} -- --template svelte",
+    alias: ["svelte"],
+    options: ["vite"],
+    userOutput: `Creating your ${chalk.red(
+      "Svelte"
+    )} project with ${chalk.yellow("Vite")}`,
+  },
+  "svelte-vite-ts": {
+    command: "npm init vite@latest ${pathToDir} -- --template svelte-ts",
+    alias: ["svelte"],
+    options: ["vite", "ts"],
+    userOutput: `Creating your ${chalk.red(
+      "Svelte"
+    )} project with ${chalk.yellow("Vite")} and ${chalk.blueBright(
+      "Typescript"
+    )}`,
+  },
+  "lit-element-vite": {
+    command: "npm init vite@latest ${pathToDir} -- --template lit-element",
+    alias: ["lit-element", "lit"],
+    options: ["vite"],
+    userOutput: `Creating your ${chalk.blue(
+      "Lit-Element"
+    )} project with ${chalk.yellow("Vite")}`,
+  },
+  "lit-element-vite-ts": {
+    command: "npm init vite@latest ${pathToDir} -- --template lit-element-ts",
+    alias: ["lit-element", "lit"],
+    options: ["vite", "ts"],
+    userOutput: `Creating your ${chalk.blue(
+      "Lit-Element"
+    )} project with ${chalk.yellow("Vite")} and ${chalk.blueBright(
+      "Typescript"
+    )}`,
   },
 };
 
