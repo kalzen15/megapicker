@@ -58,6 +58,12 @@ const commands = {
     options: [],
     userOutput: `Creating your ${chalk.green("Vue")} project`,
   },
+  preact: {
+    command: "npx preact-cli create default ${pathToDir}",
+    alias: ["preact", "preactjs"],
+    options: [],
+    userOutput: `Creating your ${chalk.magenta("Preact")} project`,
+  },
 };
 
 export const findCommand = (dirName, args) => {
