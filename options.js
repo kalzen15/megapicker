@@ -52,6 +52,12 @@ const commands = {
     options: [],
     userOutput: `Creating your ${chalk.blue("Express")} project`,
   },
+  vue: {
+    command: "npx -p @vue/cli@latest vue create ${pathToDir}",
+    alias: ["vue", "vuejs", "vuecli"],
+    options: [],
+    userOutput: `Creating your ${chalk.green("Vue")} project`,
+  },
 };
 
 export const findCommand = (dirName, args) => {

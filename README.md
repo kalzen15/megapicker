@@ -41,20 +41,29 @@ $ mpk <name> [rn,react-native] [expo]
 ```
 $ mpk <name> [next,cna,create-next-app]
 ```
+
 **Nest**
 
 ```
 $ mpk <name> [nest]
 ```
+
 **Angular**
 
 ```
 $ mpk <name> [angular,ng]
 ```
+
 **Express**
 
 ```
 $ mpk <name> [express,expressjs,express-generator-typescript]
+```
+
+**Vue**
+
+```
+$ mpk <name> [vue, vuejs, vuecli]
 ```
 
 ## Contributing
