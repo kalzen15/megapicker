@@ -56,7 +56,7 @@ const commands = {
     command: "npx -p @vue/cli@latest vue create ${pathToDir}",
     alias: ["vue", "vuejs", "vuecli"],
     options: [],
-    userOutput: `Creating your ${chalk.red("Vue")} project`,
+    userOutput: `Creating your ${chalk.green("Vue")} project`,
   },
 };
 
