@@ -9,7 +9,7 @@ const commands = {
   "react-ts": {
     command: "npx create-react-app ${pathToDir} --template typescript",
     alias: ["react", "cra", "create-react-app"],
-    options: [],
+    options: ["ts"],
     userOutput: `Creating your ${chalk.blue(
       "React"
     )} project with ${chalk.blueBright("Typescript")}`,
@@ -25,7 +25,7 @@ const commands = {
   "react-vite-ts": {
     command: "npm init vite@latest ${pathToDir} -- --template react-ts",
     alias: ["react", "cra", "create-react-app"],
-    options: ["vite", "ts"],
+    options: ["vite-ts"],
     userOutput: `Creating your ${chalk.blue(
       "React"
     )} project with ${chalk.yellow("Vite")} and ${chalk.blueBright(
@@ -95,7 +95,7 @@ const commands = {
   "vue-vite-ts": {
     command: "npm init vite@latest ${pathToDir} -- --template vue-ts",
     alias: ["vue", "vuejs", "vuecli"],
-    options: ["vite", "ts"],
+    options: ["vite-ts"],
     userOutput: `Creating your ${chalk.green(
       "Vue"
     )} project with ${chalk.yellow("Vite")} and ${chalk.blueBright(
@@ -119,7 +119,7 @@ const commands = {
   "preact-vite-ts": {
     command: "npm init vite@latest ${pathToDir} -- --template preact-ts",
     alias: ["preact", "preactjs"],
-    options: ["vite", "ts"],
+    options: ["vite-ts"],
     userOutput: `Creating your ${chalk.magenta(
       "Preact"
     )} project with ${chalk.yellow("Vite")} and ${chalk.blueBright(
@@ -143,7 +143,7 @@ const commands = {
   "vanilla-vite-ts": {
     command: "npm init vite@latest ${pathToDir} -- --template vanilla-ts",
     alias: ["vanilla"],
-    options: ["vite", "ts"],
+    options: ["vite-ts"],
     userOutput: `Creating your ${chalk.yellow(
       "Vanilla"
     )} project with ${chalk.yellow("Vite")} and ${chalk.blueBright(
@@ -161,7 +161,7 @@ const commands = {
   "svelte-vite-ts": {
     command: "npm init vite@latest ${pathToDir} -- --template svelte-ts",
     alias: ["svelte"],
-    options: ["vite", "ts"],
+    options: ["vite-ts"],
     userOutput: `Creating your ${chalk.red(
       "Svelte"
     )} project with ${chalk.yellow("Vite")} and ${chalk.blueBright(
@@ -179,7 +179,7 @@ const commands = {
   "lit-element-vite-ts": {
     command: "npm init vite@latest ${pathToDir} -- --template lit-element-ts",
     alias: ["lit-element", "lit"],
-    options: ["vite", "ts"],
+    options: ["vite-ts"],
     userOutput: `Creating your ${chalk.blue(
       "Lit-Element"
     )} project with ${chalk.yellow("Vite")} and ${chalk.blueBright(

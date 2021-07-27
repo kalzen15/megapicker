@@ -27,7 +27,7 @@ The currently supported stacks are:
 **React**
 
 ```
-$ mpk <name> [react,cra,create-react-app] [vite,ts]
+$ mpk <name> [react,cra,create-react-app] [ts,vite,vite-ts]
 ```
 
 **React Native**
@@ -63,12 +63,12 @@ $ mpk <name> [express,expressjs,express-generator-typescript]
 **Vue**
 
 ```
-$ mpk <name> [vue, vuejs, vuecli] [vite,ts]
+$ mpk <name> [vue, vuejs, vuecli] [vite,vite-ts]
 ```
 
 **Preact**
 ```
-$ mpk <name> [preact,preactjs] [vite,ts]
+$ mpk <name> [preact,preactjs] [vite,vite-ts]
 ```
 
 **Gatsby**
@@ -79,19 +79,19 @@ $ mpk <name> [gatsby,gatsbyjs]
 
 **Vanilla with Vite**
 ```
-$ mpk <name> [vanilla] vite [ts]
+$ mpk <name> [vanilla] [vite,vite-ts]
 
 ```
 
 **Svelte with Vite**
 ```
-$ mpk <name> [svelte] vite [ts]
+$ mpk <name> [svelte] [vite,vite-ts]
 
 ```
 
 **Lit Element with Vite**
 ```
-$ mpk <name> [lit,lit-element] vite [ts]
+$ mpk <name> [lit,lit-element] [vite,vite-ts]
 
 ```
 
