@@ -6,6 +6,14 @@ const commands = {
     options: [],
     userOutput: `Creating your ${chalk.blue("React")} project`,
   },
+  "react-ts": {
+    command: "npx create-react-app ${pathToDir} --template typescript",
+    alias: ["react", "cra", "create-react-app"],
+    options: [],
+    userOutput: `Creating your ${chalk.blue(
+      "React"
+    )} project with ${chalk.blueBright("Typescript")}`,
+  },
   "react-vite": {
     command: "npm init vite@latest ${pathToDir} -- --template react",
     alias: ["react", "cra", "create-react-app"],
