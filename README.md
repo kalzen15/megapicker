@@ -74,25 +74,21 @@ $ mpk <name> [preact,preactjs] [vite,vite-ts]
 **Gatsby**
 ```
 $ mpk <name> [gatsby,gatsbyjs]
-
 ```
 
 **Vanilla with Vite**
 ```
 $ mpk <name> [vanilla] [vite,vite-ts]
-
 ```
 
 **Svelte with Vite**
 ```
 $ mpk <name> [svelte] [vite,vite-ts]
-
 ```
 
 **Lit Element with Vite**
 ```
 $ mpk <name> [lit,lit-element] [vite,vite-ts]
-
 ```
 
 ## Contributing
