@@ -21,8 +21,16 @@ const getNewPath = async () => {
   return response;
 };
 
+const projectBuilder = async () => {};
+
 (async () => {
   const args = process.argv.slice(2);
+  if (args.length == 1) {
+    if (args[0] === "builder") {
+      projectBuilder();
+    }
+    return;
+  }
   const validPath = checkPath(args[0] + "/package.json");
   if (!validPath) {
     console.log(chalk.white.bgRed("Your Path is not valid"));
