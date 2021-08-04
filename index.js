@@ -21,7 +21,27 @@ const getNewPath = async () => {
   return response;
 };
 
-const projectBuilder = async () => {};
+const projectBuilder = async () => {
+  var choices = ["Backend", "Frontend"];
+  var frontend = [
+    "React",
+    "React Native",
+    "Next",
+    "Angular",
+    "Gatsby",
+    "Vue",
+    "Preact",
+  ];
+  var backend = ["Nest", "Express", "VanillaJS", "Lit Element"];
+  const scope = await prompts({
+    type: "select",
+    name: "scope",
+    message: "What do you want the project for?",
+    choices,
+  });
+
+  console.log(scope);
+};
 
 (async () => {
   const args = process.argv.slice(2);
