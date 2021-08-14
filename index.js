@@ -21,7 +21,22 @@ const getNewPath = async () => {
   return response;
 };
 
+const builderMap = {
+  React: "cra ",
+  "React Native": "rn ",
+  Next: "cna ",
+  Angular: "ng ",
+  Vue: "vue ",
+  Preact: "preact ",
+  Gatsby: "gatsby ",
+  Nest: "nest ",
+  Express: "express ",
+  VanillaJS: "vanilla ",
+  "Lit Element": "lit ",
+};
+
 const projectBuilder = async () => {
+  var command = "mpk ";
   var choices = ["Backend", "Frontend"];
   var frontend = [
     "React",
