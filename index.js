@@ -36,7 +36,7 @@ const builderMap = {
 };
 
 const projectBuilder = async () => {
-  var command = "mpk ";
+  var command = "";
   var choices = ["Backend", "Frontend"];
   var frontend = [
     "React",
@@ -48,14 +48,28 @@ const projectBuilder = async () => {
     "Preact",
   ];
   var backend = ["Nest", "Express", "VanillaJS", "Lit Element"];
-  const scope = await prompts({
-    type: "select",
-    name: "scope",
-    message: "What do you want the project for?",
-    choices,
-  });
-
-  console.log(scope);
+  const scope = await prompts([
+    {
+      type: "text",
+      name: "path",
+      message: "Enter a new Project name or Path",
+      validate: (path) =>
+        checkPath(path + "/package.json") ? true : `Path not valid`,
+    },
+    {
+      type: "select",
+      name: "scope",
+      message: "What do you want the project for?",
+      choices,
+    },
+    {
+      type: "select",
+      name: "project",
+      message: "What is the project?",
+      choices: (prev) => (prev == 1 ? frontend : backend),
+    },
+  ]);
+  console.log("scope", scope);
 };
 
 (async () => {
