@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { findCommand } from "./options.js";
+import { findCommand, findOption } from "./options.js";
 import { execSync } from "child_process";
 import { existsSync } from "fs";
 import prompts from "prompts";
@@ -22,22 +22,22 @@ const getNewPath = async () => {
 };
 
 const builderMap = {
-  React: "cra ",
-  "React Native": "rn ",
-  Next: "cna ",
-  Angular: "ng ",
-  Vue: "vue ",
-  Preact: "preact ",
-  Gatsby: "gatsby ",
-  Nest: "nest ",
-  Express: "express ",
-  VanillaJS: "vanilla ",
-  "Lit Element": "lit ",
+  React: "react",
+  "React Native": "react-native",
+  Next: "next",
+  Angular: "angular",
+  Vue: "vue",
+  Preact: "preact",
+  Gatsby: "gatsby",
+  Nest: "nest",
+  Express: "express",
+  VanillaJS: "vanilla",
+  "Lit Element": "lit-element",
 };
 
 const projectBuilder = async () => {
-  var command = "";
-  var choices = ["Backend", "Frontend"];
+  var command = [];
+  var choices = ["Frontend", "Backend"];
   var frontend = [
     "React",
     "React Native",
@@ -66,10 +66,25 @@ const projectBuilder = async () => {
       type: "select",
       name: "project",
       message: "What is the project?",
-      choices: (prev) => (prev == 1 ? frontend : backend),
+      choices: (prev) => (prev == 0 ? frontend : backend),
     },
   ]);
-  console.log("scope", scope);
+  const tempProject =
+    builderMap[
+      scope.scope == 0 ? frontend[scope.project] : backend[scope.project]
+    ];
+  const options = findOption(tempProject);
+  const chosenOption = await prompts({
+    type: "select",
+    name: "option",
+    message: "Choose an option from below",
+    choices: options,
+  });
+  command.push(scope.path, tempProject);
+  options[chosenOption.option] === "Basic"
+    ? null
+    : command.push(options[chosenOption.option]);
+  console.log(command);
 };
 
 (async () => {

@@ -188,8 +188,22 @@ const commands = {
   },
 };
 
+export const findOption = (alias) => {
+  var createdOptions = [];
+  for (const [_, value] of Object.entries(commands)) {
+    if (value.alias[0] === alias) {
+      if (value.options.length == 0) {
+        createdOptions.push("Basic");
+      } else {
+        createdOptions.push(value.options[0]);
+      }
+    }
+  }
+  return createdOptions;
+};
+
 export const findCommand = (dirName, args) => {
-  for (const [key, value] of Object.entries(commands)) {
+  for (const [_, value] of Object.entries(commands)) {
     for (const appName of value.alias) {
       if (appName === args[0]) {
         var optionCheck = true;
