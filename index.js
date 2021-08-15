@@ -21,6 +21,20 @@ const getNewPath = async () => {
   return response;
 };
 
+const commandRunner = (path, args) => {
+  var { userOutput, command } = findCommand(path, args);
+  console.log("*********************************\n\n");
+  console.log(userOutput);
+  console.log("\n\n*********************************\n\n");
+  return execSync(command, { stdio: "inherit" }, (err, stdout, stderr) => {
+    if (err) {
+      console.error(stderr);
+      return;
+    }
+    console.log(stdout);
+  });
+};
+
 const builderMap = {
   React: "react",
   "React Native": "react-native",
@@ -84,22 +98,8 @@ const projectBuilder = async () => {
   options[chosenOption.option] === "Basic"
     ? null
     : createdCommand.push(options[chosenOption.option]);
-  console.log(createdCommand);
 
-  var { userOutput, command } = findCommand(
-    createdCommand[0],
-    createdCommand.slice(1)
-  );
-  console.log("*********************************\n\n");
-  console.log(userOutput);
-  console.log("\n\n*********************************\n\n");
-  return execSync(command, { stdio: "inherit" }, (err, stdout, stderr) => {
-    if (err) {
-      console.error(stderr);
-      return;
-    }
-    console.log(stdout);
-  });
+  commandRunner(createdCommand[0], createdCommand.slice(1));
 };
 
 (async () => {
@@ -116,15 +116,5 @@ const projectBuilder = async () => {
     var { newPath } = await getNewPath();
     args[0] = newPath;
   }
-  var { userOutput, command } = findCommand(args[0], args.slice(1));
-  console.log("*********************************\n\n");
-  console.log(userOutput);
-  console.log("\n\n*********************************\n\n");
-  return execSync(command, { stdio: "inherit" }, (err, stdout, stderr) => {
-    if (err) {
-      console.error(stderr);
-      return;
-    }
-    console.log(stdout);
-  });
+  commandRunner(args[0], args.slice(1));
 })();
