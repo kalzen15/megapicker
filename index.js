@@ -36,7 +36,7 @@ const builderMap = {
 };
 
 const projectBuilder = async () => {
-  var command = [];
+  var createdCommand = [];
   var choices = ["Frontend", "Backend"];
   var frontend = [
     "React",
@@ -80,11 +80,26 @@ const projectBuilder = async () => {
     message: "Choose an option from below",
     choices: options,
   });
-  command.push(scope.path, tempProject);
+  createdCommand.push(scope.path, tempProject);
   options[chosenOption.option] === "Basic"
     ? null
-    : command.push(options[chosenOption.option]);
-  console.log(command);
+    : createdCommand.push(options[chosenOption.option]);
+  console.log(createdCommand);
+
+  var { userOutput, command } = findCommand(
+    createdCommand[0],
+    createdCommand.slice(1)
+  );
+  console.log("*********************************\n\n");
+  console.log(userOutput);
+  console.log("\n\n*********************************\n\n");
+  return execSync(command, { stdio: "inherit" }, (err, stdout, stderr) => {
+    if (err) {
+      console.error(stderr);
+      return;
+    }
+    console.log(stdout);
+  });
 };
 
 (async () => {

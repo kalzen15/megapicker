@@ -19,7 +19,10 @@ $ npm install -g megapicker
 ```
 $ mpk <name> <stack> <option1 option2 etc.>
 ```
-
+##Builder
+```
+$ mpk builder
+```
 ## Support
 
 The currently supported stacks are:
