@@ -19,7 +19,7 @@ const builderMap = {
 export const projectBuilder = async () => {
   var createdCommand = [];
   var choices = ["Frontend", "Backend"];
-  var frontend = [
+  const frontendOptions = [
     "React",
     "React Native",
     "Next",
@@ -28,8 +28,8 @@ export const projectBuilder = async () => {
     "Vue",
     "Preact",
   ];
-  var backend = ["Nest", "Express", "VanillaJS", "Lit Element"];
-  const scope = await prompts([
+  const backendOptions = ["Nest", "Express", "VanillaJS", "Lit Element"];
+  const projectScope = await prompts([
     {
       type: "text",
       name: "path",
@@ -47,12 +47,14 @@ export const projectBuilder = async () => {
       type: "select",
       name: "project",
       message: "What is the project?",
-      choices: (prev) => (prev == 0 ? frontend : backend),
+      choices: (prev) => (prev == 0 ? frontendOptions : backendOptions),
     },
   ]);
   const tempProject =
     builderMap[
-      scope.scope == 0 ? frontend[scope.project] : backend[scope.project]
+      projectScope.scope == 0
+        ? frontendOptions[projectScope.project]
+        : backendOptions[projectScope.project]
     ];
   const options = findOption(tempProject);
   const chosenOption = await prompts({
@@ -61,7 +63,7 @@ export const projectBuilder = async () => {
     message: "Choose an option from below",
     choices: options,
   });
-  createdCommand.push(scope.path, tempProject);
+  createdCommand.push(projectScope.path, tempProject);
   options[chosenOption.option] === "Basic"
     ? null
     : createdCommand.push(options[chosenOption.option]);
