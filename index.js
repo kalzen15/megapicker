@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import chalk from "chalk";
-import { projectBuilder } from "./builder.js";
-import { checkPath, commandRunner, getNewPath } from "./helpers.js";
+import { projectBuilder } from "./lib/builder.js";
+import { checkPath, commandRunner, getNewPath } from "./lib/helpers.js";
 
 (async () => {
   const args = process.argv.slice(2);
